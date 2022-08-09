@@ -49,6 +49,7 @@ class CodicefiscaleTest extends TestCase
             'LRSCRS73D04C265T',
             'ZZZZRR92A01H146P',
             'CVLSTO00R10H501D',
+            'cvlsto00r10h501d',
         ]];
     }
 
@@ -88,6 +89,8 @@ class CodicefiscaleTest extends TestCase
      */
     public function testCheckGoodSyntaxCodicefiscale($codicefiscale)
     {
+        fwrite(STDERR, print_r($codicefiscale, true));
+
         $this->assertTrue($this->Codicefiscale->checkSyntaxCodicefiscale($codicefiscale));
     }
 
