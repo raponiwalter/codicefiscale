@@ -65,6 +65,7 @@ class Codicefiscale
         }
 
         $splittedString = str_split(strtoupper(trim($fiscalcode)));
+        array_pop($splittedString);
 
         $dispari = [
             '0' => 1,
@@ -143,18 +144,15 @@ class Codicefiscale
             'Y' => 24,
             'Z' => 25
         ];
-
-        $valueFrom = null;
-        $somma = 0;
-        $splittedString = array_filter($splittedString);
-        array_pop($splittedString);
+        $valueFrom  = null;
+        $somma      = 0;
 
         foreach ($splittedString as $key => $curChar) {
             $valueFrom = (!$this->_isOdd($key)) ? 'dispari' : 'pari';
             $somma += ${$valueFrom}[$curChar];
         }
 
-        $resto = $somma % 26;
+        $resto  = $somma % 26;
         $values = array_flip($pari);
 
         return  $values[$resto];
