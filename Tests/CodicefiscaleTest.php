@@ -47,7 +47,8 @@ class CodicefiscaleTest extends TestCase
             'RSSVNT79B16L500J',
             'MSSBGG71H26H501M',
             'LRSCRS73D04C265T',
-            'ZZZZRR92A01H146P'
+            'ZZZZRR92A01H146P',
+            'CVLSTO00R10H501D',
         ]];
     }
 
