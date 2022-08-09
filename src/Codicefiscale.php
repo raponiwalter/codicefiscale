@@ -42,9 +42,9 @@ class Codicefiscale
      * @return bool
      */
     public function isCodicefiscale(string $fiscalcode) : bool
-    {    
+    {
         $codiceControllo = $this->codiceControllo($fiscalcode);
-        $fiscalcodeChar = substr($fiscalcode, -1);
+        $fiscalcodeChar = substr(strtoupper($fiscalcode), -1);
 
         return $fiscalcodeChar == $codiceControllo &&
         !empty($codiceControllo);
